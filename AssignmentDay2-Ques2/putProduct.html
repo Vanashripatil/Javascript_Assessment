@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./putProduct.js"></script>
+  <script>
+  window.onload = function (){
+
+ var promise = getProducts();
+ promise.then(function(response){
+    console.log(response);
+ }).catch(function(error){
+    console.log(error);
+ });
+
+ var prd = {
+   //   ProductRowId : 26,
+   //   ProductId : "Prod-0015",
+   //   ProductName : "Suger Checker",
+   //   Manufacturer : "MS-Electrical",
+   //   CategoryName : "Electronicsl",
+   //   Description : "Suger Checker for Audults",
+   //   BasePrice :1500,
+
+     ProductRowId :27,
+     ProductId : "Prod-0016",
+     ProductName : "Monitor",
+     Manufacturer : "MS-Electrical",
+     CategoryName : "Electronics", 
+     Description : "56 inches",
+     BasePrice : 4000
+ };
+ var putPromise = postProduct(prd);
+
+ putPromise.then(function(response){
+    console.log(response);
+ }).catch(function(error){
+    console.log(error);
+ });
+}   
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

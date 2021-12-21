@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./getPost.js"></script>
+  <script>
+    window.onload = function(){
+          var promise = getProducts();
+             promise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+
+             var promise = deleteProduct();
+             // Subscribe and resolve /  reject
+             promise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+
+            }
+
+            var prd = {
+                 ProductId: 'Prod-00031',
+                 ProductName: 'Tablet',
+                 CategoryName: 'Electronics',
+                 Manufacturer: 'MS-IT',
+                 Description: '10-inch HD Display, 16 Gb RAM',
+                 BasePrice:45000   
+             };
+             var postPromise = postProduct(prd);
+
+             postPromise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+
+            
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

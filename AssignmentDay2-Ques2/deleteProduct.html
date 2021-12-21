@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./deleteProduct.js"></script>
+  <script>
+    window.onload = function(){
+          var promise = getProducts();
+             promise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+
+             var prd = {  
+            
+               ProductRowId :24,
+               ProductId : "Prod-0013",
+               ProductName : "Power Adapter",
+               Manufacturer : "MS-Electrical",
+               CategoryName : "Electrical",
+               Description : "Fast Charger",
+               BasePrice: 3500
+             };
+
+             var promise = deleteProduct(prd);
+             promise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+            }
+
+             var promise = getProducts();
+             promise.then(function(response){
+                console.log(response);
+             }).catch(function(error){
+                console.log(error);
+             });
+            
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
